@@ -1,6 +1,6 @@
 <div class="form-group">
     <label for="body">プラン内容<span class="required">必須</span></label>
-    <textarea name="post[body]" id="body" placeholder="プラン内容を入力してください" required value="<?= h($post->getBody()) ?>" <?php if ($errors['body']) echo 'class="error-field"' ?>></textarea>
+    <textarea name="post[body]" id="body" placeholder="プラン内容を入力してください" required <?php if ($errors['body']) echo 'class="error-field"' ?>><?= h($post->getBody()) ?></textarea>
     <?php if ($errors['body']) echo (create_err_msg($errors['body'])) ?>
 </div>
 <div class="form-group">

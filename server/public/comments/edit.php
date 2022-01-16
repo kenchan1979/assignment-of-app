@@ -45,7 +45,11 @@ $post = $comment->getPost();
 <!DOCTYPE html>
 <html lang="ja"><?php include_once __DIR__ . '/../common/_head.php' ?>
 
-<body> <?php include_once __DIR__ . '/../common/_header.php' ?> <div class="wrapper"> <?php include_once __DIR__ . '/_post.php' ?> <?php include_once __DIR__ . '/../common/_alert.php' ?>
+<body> <?php include_once __DIR__ . '/../common/_header.php' ?>
+    <div class="wrapper wrapper-comment">
+        <div>
+        <?php include_once __DIR__ . '/_post.php' ?>
+        <?php include_once __DIR__ . '/../common/_alert.php' ?>
 
         <form action="update.php" method="post">
             <?php include_once __DIR__ . '/_form.php' ?>
@@ -54,6 +58,7 @@ $post = $comment->getPost();
                 <input type="submit" class="btn" value="更新">
             </div>
         </form>
+        </div>
     </div>
 
     <?php include_once __DIR__ . '/../common/_footer.php' ?>

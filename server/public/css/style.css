@@ -72,6 +72,12 @@ ul {
 .user-wrapper {
   width: 700px;
 }
+.wrapper-comment {
+  border: 2px solid grey;
+  box-shadow: 0 30px 60px 0 rgba(0, 0, 0, 0.3);
+  min-height: 0;
+  border-top: 15px rgb(188, 193, 196) solid;
+}
 .alert-message-area {
   background-color: rgb(250, 240, 242);
   border: 1px solid rgb(218, 42, 42);
@@ -225,10 +231,6 @@ footer {
 .new-comment:hover {
   background-color: #e4d88b;
   color: #fff;
-}
-.comment-btn {
-  width: 70%;
-  margin-left: 15% ;
 }
 /* トップページ
 -----------------------*/
@@ -489,7 +491,10 @@ ul {
     margin-top: 3px;
 }
 .planarea{
+  border: 2px solid grey;
   width: 100%;
+  padding: 20px;
+  box-shadow: 0 30px 60px 0 rgba(0, 0, 0, 0.3);
 }
 .date,
 .reddate {

@@ -100,7 +100,6 @@ $comments = $post->findCommentsWithUser();
                                 <?php endif; ?>
                             </div>
                             <hr class="comment-hr">
-
                             <?php if ($comments) : ?>
                                 <ul class="comment-list">
                                     <?php foreach ($comments as $i => $c) : ?>
