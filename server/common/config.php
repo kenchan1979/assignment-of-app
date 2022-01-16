@@ -1,0 +1,65 @@
+<?php
+
+define('DSN', 'mysql:host=db;dbname=pralearn;charset=utf8');
+define('USER', 'teuser');
+define('PASSWORD', 'pwd');
+define('MSG_BAD_REQUEST', '不正なリクエストです');
+define('MSG_EMAIL_REQUIRED', 'メールアドレスを入力してください');
+define('MSG_EMAIL_FORMAT', 'メールアドレスの形式が正しくありません');
+define('MSG_EMAIL_MAX', 'メールアドレスは255文字以内で入力してください');
+define('MSG_EMAIL_USED', 'すでにメールアドレスが登録されています');
+define('MSG_EMAIL_PASSWORD_NOT_MATCH', 'メールアドレスかパスワードに誤りがあります');
+define('MSG_PASSWORD_REQUIRED', 'パスワードを入力してください');
+define('MSG_PASSWORD_FORMAT', 'パスワードは半角英数字を組み合わせた8文字以上で入力してください');
+define('MSG_PASSWORD_MAX', 'パスワードは255文字以内で入力してください');
+define('MSG_PASSWORD_NOT_MATCH', 'パスワードが一致しません');
+define('MSG_PASSWORD_INCORRECT', 'パスワードが正しくありません');
+define('MSG_CONFIRM_PASSWORD_REQUIRED', '確認用パスワードを入力してください');
+define('MSG_USER_NAME_REQUIRED', 'ユーザー名を入力してください');
+define('MSG_USER_NAME_MAX', 'ユーザー名は50文字以内で入力してください');
+define('MSG_PROFILE_REQUIRED', '自己紹介を入力してください');
+define('MSG_AVATAR_FORMAT', 'プロフィール画像は「jpg」、「png」、「gif」のみアップロード可能です');
+define('MSG_BODY_REQUIRED', 'プランを入力してください');
+define('MSG_DUE_DATE_REQUIRED', '期限日を入力してください');
+define('MSG_COMMENT_REQUIRED', 'コメントを入力してください');
+define('MSG_COMMENT_MAX', 'コメントは255文字以内で入力してください');
+define('MSG_UPLOAD_FAILED', 'ファイルのアップロードに失敗しました');
+define('MSG_FILE_DELETE_FAILED', 'ファイルの削除に失敗しました');
+define('MSG_USER_CANT_REGISTER', 'アカウントの登録ができませんでした');
+define('MSG_USER_REGISTER', 'アカウントを登録しました');
+define('MSG_USER_CANT_UPDATE', 'アカウントの更新ができませんでした');
+define('MSG_USER_CANT_DELETE', 'アカウントの削除ができませんでした');
+define('MSG_USER_UPDATE', 'アカウントを更新しました');
+define('MSG_USER_DELETE', 'アカウントを削除しました');
+define('MSG_USER_DOES_NOT_EXIST', '指定したアカウントが見つかりません');
+define('MSG_USER_CANNOT_BE_DELETE', '自分のアカウント以外は削除できません');
+define('MSG_SIGN_OUT', 'ログアウトしました');
+define('MSG_CANT_SIGN_IN', 'ログインできませんでした');
+define('MSG_SIGN_IN', 'ログインしました');
+define('MSG_PLEASE_SIGN_IN', 'ログインしてください');
+define('MSG_POST_CANT_REGISTER', 'プランの登録ができませんでした');
+define('MSG_PLAN_MAX', 'プランは50文字以内で入力してください');
+define('MSG_POST_REGISTER', 'プランを登録しました');
+define('MSG_POST_DOES_NOT_EXIST', '指定したプランが見つかりません');
+define('MSG_POST_CANNOT_BE_MODIFIED', '自分のプラン以外は編集できません');
+define('MSG_POST_CANNOT_BE_DELETE', '自分のプラン以外は削除できません');
+define('MSG_POST_CANT_UPDATE', 'プランの更新ができませんでした');
+define('MSG_POST_CANT_DELETE', 'プランの削除ができませんでした');
+define('MSG_POST_UPDATE', 'プランを更新しました');
+define('MSG_POST_DELETE', 'プランを削除しました');
+define('MSG_COMMENT_DOES_NOT_EXIST', '指定したコメントが見つかりません');
+define('MSG_COMMENT_CANNOT_BE_MODIFIED', '自分のコメント以外は編集できません');
+define('MSG_COMMENT_CANNOT_BE_DELETE', '自分のコメント以外は削除できません');
+define('MSG_COMMENT_CANT_UPDATE', 'コメントの更新ができませんでした');
+define('MSG_COMMENT_CANT_DELETE', 'コメントの削除ができませんでした');
+define('MSG_COMMENT_UPDATE', 'コメントを更新しました');
+define('MSG_COMMENT_DELETE', 'コメントを削除しました');
+define('MSG_COMMENT_CANT_REGISTER', 'コメントの登録ができませんでした');
+define('MSG_COMMENT_REGISTER', 'コメントを登録しました');
+define('GOOD_JOB', 'GOOD JOB!!');
+define('WORK_AGAIN', 'REVIEWING?');
+define('LEARNING_STATUS_NOTYET', 'is null');
+define('LEARNING_STATUS_DONE', 'is not null');
+
+
+
