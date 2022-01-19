@@ -76,7 +76,7 @@ ul {
   border: 2px solid grey;
   box-shadow: 0 30px 60px 0 rgba(0, 0, 0, 0.3);
   min-height: 0;
-  border-top: 15px rgb(188, 193, 196) solid;
+  border-top: 15px rgb(189, 193, 196) solid;
 }
 .alert-message-area {
   background-color: rgb(250, 240, 242);
