@@ -30,6 +30,7 @@ In macOS's case, on terminal.
 
 ```bush
 git clone git@github.com:kenchan1979/assignment-of-app.git
+cd assignment-of-app
 docker-coompse up -d
 ```
 
