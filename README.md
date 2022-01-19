@@ -1,28 +1,31 @@
-#assignment of app
+# assignment of app
 
-#Name
+# Name
 
 Name is 'みんなのプラン'.
 
-#Demo
+# Demo
 
-#Features
+<img width="1071" alt="Screen Shot 2022-01-17 at 20 29 33" src="https://user-images.githubusercontent.com/80375718/150059495-f95669b9-b02d-4414-a98c-48fa154cadab.png">
 
-You, family, friends and colleagues can make plans easily.
-You can share plans with those people.
-And also you can comment on plans.
 
-#Requirement
+# Features
+
+You, family, friends and colleagues can make plans easily.  
+You can share plans with those people.  
+And also you can comment on plans.  
+
+# Requirement
 
 Windows
 macOS
 
 If you can use web browser like google chrome,it's available.
 
-#Installation
+# Installation
 
-Execute following command.
-In Windows's case, on command prompt.
+Execute following command.  
+In Windows's case, on command prompt.  
 In macOS's case, on terminal.
 
 ```bush
@@ -51,20 +54,20 @@ docker-compose exec app php ./db/db_setup.php
 ```
 If '===データベース set up完了===' appears, settings database completes!
 
-#Usage
+# Usage
 
-First of all, you can make account from 'アカウント登録'.
-And then you can make plans and comment on any plans after login.
-Even if you don't have own account or don't login, you can see any plans.
+First of all, you can make account from 'アカウント登録'.  
+And then you can make plans and comment on any plans after login.  
+Even if you don't have own account or don't login, you can see any plans.  
 
-#Auther
+# Auther
 
-Name: ken who belong to Elites.inc(https://elites.education/) as student
+Name: ken who belong to Elites.inc(https://elites.education/) as student.  
 Email: kensuga0215@gmail.com
 
-#License
+# License
 
-No license.
+No license.  
 Anybody can use.
 
 
