@@ -1,4 +1,4 @@
-CREATE TABLE comments1 (
+CREATE TABLE comments (
     id INT PRIMARY KEY AUTO_INCREMENT,
     post_id INT NOT NULL,
     user_id INT NOT NULL,
@@ -7,10 +7,10 @@ CREATE TABLE comments1 (
     updated_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     CONSTRAINT fk_comments_post_id
         FOREIGN KEY (post_id)
-        REFERENCES posts1(id)
+        REFERENCES posts(id)
         ON DELETE CASCADE ON UPDATE CASCADE,
     CONSTRAINT fk_comments_user_id
         FOREIGN KEY (user_id)
-        REFERENCES users1(id)
+        REFERENCES users(id)
         ON DELETE CASCADE ON UPDATE CASCADE
 );

@@ -154,7 +154,7 @@ class Comment
     {
         $sql = <<<EOM
         INSERT INTO
-            comments1 (post_id, user_id, comment)
+            comments (post_id, user_id, comment)
         VALUES
             (:post_id, :user_id, :comment)
         EOM;
@@ -177,7 +177,7 @@ class Comment
     {
         $sql = <<<EOM
         UPDATE
-            comments1
+            comments
         SET
             comment = :comment
         WHERE
@@ -192,7 +192,7 @@ class Comment
 
     private function deleteMe($dbh)
     {
-        $sql = 'DELETE FROM comments1 WHERE id = :id';
+        $sql = 'DELETE FROM comments WHERE id = :id';
 
         $stmt = $dbh->prepare($sql);
         $stmt->bindParam(':id', $this->id, PDO::PARAM_INT);
@@ -214,7 +214,7 @@ class Comment
         $instances = [];
         try {
             $dbh = connect_db();
-            $sql = 'SELECT * FROM comments1 WHERE post_id = :post_id';
+            $sql = 'SELECT * FROM comments WHERE post_id = :post_id';
             $stmt = $dbh->prepare($sql);
             $stmt->bindParam(':post_id', $post_id, PDO::PARAM_INT);
             $stmt->execute();
@@ -253,7 +253,7 @@ class Comment
         try {
             $dbh = connect_db();
 
-            $sql = 'SELECT * FROM comments1 WHERE id = :id';
+            $sql = 'SELECT * FROM comments WHERE id = :id';
             $stmt = $dbh->prepare($sql);
             $stmt->bindParam(':id', $id, PDO::PARAM_INT);
             $stmt->execute();
@@ -277,7 +277,7 @@ class Comment
             SELECT
                 DISTINCT post_id
             FROM
-                comments1
+                comments
             WHERE
                 user_id = :user_id
             EOM;

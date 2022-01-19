@@ -1,4 +1,4 @@
-CREATE TABLE posts1 (
+CREATE TABLE posts (
     id INT PRIMARY KEY AUTO_INCREMENT,
     user_id INT NOT NULL,
     body VARCHAR(255) NOT NULL,
@@ -9,6 +9,6 @@ CREATE TABLE posts1 (
     updated_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     CONSTRAINT fk_posts_user_id
         FOREIGN KEY (user_id)
-        REFERENCES users1(id)
+        REFERENCES users(id)
         ON DELETE CASCADE ON UPDATE CASCADE
 );

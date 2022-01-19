@@ -245,7 +245,7 @@ class Post
     {
         $sql = <<<EOM
         INSERT INTO
-            posts1 (user_id, body, due_date, completion_date)
+            posts (user_id, body, due_date, completion_date)
         VALUES
             (:user_id, :body, :due_date, :completion_date)
         EOM;
@@ -264,7 +264,7 @@ class Post
     {
         $sql = <<<EOM
         UPDATE
-            posts1
+            posts
         SET
             body = :body,
             due_date = :due_date,
@@ -283,7 +283,7 @@ class Post
 
     private function update_status_to_doneMe($dbh)
     {
-        $sql = 'UPDATE posts1 SET completion_date = CURRENT_TIMESTAMP WHERE id = :id';
+        $sql = 'UPDATE posts SET completion_date = CURRENT_TIMESTAMP WHERE id = :id';
 
         $stmt = $dbh->prepare($sql);
         $stmt->bindParam(':id', $this->id, PDO::PARAM_INT);
@@ -295,7 +295,7 @@ class Post
 
         $sql = <<<EOM
         UPDATE
-            posts1
+            posts
         SET
             completion_date = null
         WHERE
@@ -309,7 +309,7 @@ class Post
 
     private function deleteMe($dbh)
     {
-        $sql = 'DELETE FROM posts1 WHERE id = :id';
+        $sql = 'DELETE FROM posts WHERE id = :id';
 
         $stmt = $dbh->prepare($sql);
         $stmt->bindParam(':id', $this->id, PDO::PARAM_INT);
@@ -373,7 +373,7 @@ class Post
         try {
             $dbh = connect_db();
 
-            $sql = 'SELECT * FROM posts1 WHERE id = :id';
+            $sql = 'SELECT * FROM posts WHERE id = :id';
             $stmt = $dbh->prepare($sql);
             $stmt->bindParam(':id', $id, PDO::PARAM_INT);
             $stmt->execute();
@@ -395,7 +395,7 @@ class Post
         try {
             $dbh = connect_db();
 
-            $sql = 'SELECT p.* FROM posts1 p ORDER BY due_date DESC, 
+            $sql = 'SELECT p.* FROM posts p ORDER BY due_date DESC, 
             completion_date DESC';
             $sql .= ' LIMIT :par_page OFFSET :offset_count';
             $stmt = $dbh->prepare($sql);
@@ -451,7 +451,7 @@ class Post
             SELECT
                 COUNT(*) AS count
             FROM
-                posts1 p
+                posts p
 
             EOM;
 
@@ -490,14 +490,14 @@ class Post
 
         $sql = '';
         $sql .= 'UPDATE ';
-        $sql .= '    posts1 AS p ';
+        $sql .= '    posts AS p ';
         $sql .= 'LEFT JOIN ';
         $sql .= '   ( ';
         $sql .= '    SELECT ';
         $sql .= '        c.post_id, ';
         $sql .= '        COUNT(c.id) AS cnt ';
         $sql .= '    FROM ';
-        $sql .= '        comments1 c ';
+        $sql .= '        comments c ';
         $sql .= '    WHERE ';
         $sql .= '        c.post_id IN (' . $where_in . ') ';
         $sql .= '    GROUP BY c.post_id ';
