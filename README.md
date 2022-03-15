@@ -63,7 +63,7 @@ Even if you don't have own account or don't login, you can see any plans.
 
 # Auther
 
-Name: ken who belong to Elites.inc(https://elites.education/) as student.  
+Name: kens who belong to Elites.inc(https://elites.education/) as student.  
 Email: kensuga0215@gmail.com
 
 # License
