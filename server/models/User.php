@@ -299,7 +299,7 @@ class User
     {
         $sql = <<<EOM
         INSERT INTO
-            users1 (email, password, name, profile, avatar)
+            users (email, password, name, profile, avatar)
         VALUES
             (:email, :password, :name, :profile, :avatar)
         EOM;
@@ -320,7 +320,7 @@ class User
     {
         $sql = <<<EOM
         UPDATE
-            users1
+            users
         SET
             email = :email,
             name = :name,
@@ -349,7 +349,7 @@ class User
     }
     private function deleteMe($dbh)
     {
-        $sql = 'DELETE FROM users1 WHERE id = :id';
+        $sql = 'DELETE FROM users WHERE id = :id';
 
         $stmt = $dbh->prepare($sql);
         $stmt->bindParam(':id', $this->id, PDO::PARAM_INT);
@@ -465,7 +465,7 @@ class User
         try {
             $dbh = connect_db();
 
-            $sql = 'SELECT * FROM users1 WHERE id = :id';
+            $sql = 'SELECT * FROM users WHERE id = :id';
             $stmt = $dbh->prepare($sql);
             $stmt->bindParam(':id', $id, PDO::PARAM_INT);
             $stmt->execute();
@@ -487,7 +487,7 @@ class User
             if (is_array($ids)) {
                 $dbh = connect_db();
 
-                $sql = 'SELECT * FROM users1 ';
+                $sql = 'SELECT * FROM users ';
                 $sql .= 'WHERE id IN (' . substr(str_repeat(',?', count($ids)), 1) . ')';
                 $stmt = $dbh->prepare($sql);
                 $stmt->execute($ids);
@@ -521,7 +521,7 @@ class User
         try {
             $dbh = connect_db();
 
-            $sql = 'SELECT * FROM users1 WHERE email = :email';
+            $sql = 'SELECT * FROM users WHERE email = :email';
             $stmt = $dbh->prepare($sql);
             $stmt->bindParam(':email', $email, PDO::PARAM_STR);
             $stmt->execute();

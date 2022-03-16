@@ -20,7 +20,7 @@ try {
     }
     echo '===テーブル削除完了===' . PHP_EOL;
     
-    $image_dir = __DIR__ . '/../public/images';
+    $image_dir = __DIR__ . '/../public/images/';
     foreach(glob($image_dir . "*") as $dir) {
         if(is_dir($dir)) {
             foreach(glob($dir . "/*") as $file) {
@@ -33,10 +33,10 @@ try {
 
     echo '===画像ファイル削除完了===' . PHP_EOL;
 
-    // users1テーブル設定
+    // usersテーブル設定
     $sql = <<<EOM
     INSERT INTO 
-        users1 (email, password, name, profile, avatar)
+        users (email, password, name, profile, avatar)
     VALUES
         (:email, :password, :name, :profile, :avatar)
     EOM;
@@ -62,10 +62,10 @@ try {
         $stmt->bindParam(':avatar', $avatar, PDO::PARAM_STR);
         $stmt->execute();
     }
-    echo '===users1テーブル set up完了 ===' . PHP_EOL;
+    echo '===usersテーブル set up完了 ===' . PHP_EOL;
 
-    // posts1テーブル設定
-    $sql = 'SELECT id FROM users1';
+    // postsテーブル設定
+    $sql = 'SELECT id FROM users';
     $stmt = $dbh->prepare($sql);
     $stmt->execute();
 
@@ -73,7 +73,7 @@ try {
 
     $sql = <<<EOM
     INSERT INTO
-        posts1 (user_id, body, due_date, completion_date)
+        posts (user_id, body, due_date, completion_date)
     VALUES
         (:user_id, :body, :due_date, :completion_date)
     EOM;
@@ -92,16 +92,16 @@ try {
         $stmt->bindParam(':completion_date', $completion_date, PDO::PARAM_STR);
         $stmt->execute();
     };
-    echo '===posts1テーブル set up完了===' . PHP_EOL;
+    echo '===postsテーブル set up完了===' . PHP_EOL;
 
-    // comments1テーブル設定
-    $sql = 'SELECT id FROM posts1';
+    // commentsテーブル設定
+    $sql = 'SELECT id FROM posts';
     $stmt = $dbh->prepare($sql);
     $stmt->execute();
     $post_ids = $stmt->fetchAll(PDO::FETCH_COLUMN);
     $sql = <<<EOM
     INSERT INTO
-        comments1 (post_id, user_id, comment)
+        comments (post_id, user_id, comment)
     VALUES
         (:post_id, :user_id, :comment)
     EOM;
@@ -115,19 +115,19 @@ try {
         $stmt->bindParam(':comment', $comment, PDO::PARAM_STR);
         $stmt->execute();
     }
-    echo '=== comments1テーブル set up完了===' . PHP_EOL;
+    echo '=== commentsテーブル set up完了===' . PHP_EOL;
 
-    // posts1テーブル comments_countの更新
+    // postsテーブル comments_countの更新
     $sql = <<<EOM
     UPDATE
-        posts1 AS p
+        posts AS p
         INNER JOIN
         (
             SELECT 
                 c.post_id,
                 COUNT(c.id) AS cnt
             FROM 
-                comments1 c
+                comments c
             GROUP BY c.post_id
         ) cm
         ON 

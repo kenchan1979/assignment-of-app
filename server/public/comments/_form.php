@@ -1,5 +1,5 @@
 <div class="form-group">
-    <label for="comment">コメント<span class=" required">必須</span></label>
+    <label for="comment">コメント<span class="required">必須</span></label>
     <textarea name="comment[comment]" id="comment" placeholder="コメントを入力してください" required <?php if ($errors['comment']) echo 'class="error-field"' ?>><?= h($comment->getComment()) ?></textarea>
     <?php if ($errors['comment']) echo (create_err_msg($errors['comment'])) ?>
 </div>

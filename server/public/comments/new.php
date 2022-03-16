@@ -33,14 +33,20 @@ $comment = new Comment(get_post_data());
 <!DOCTYPE html>
 <html lang="ja"><?php include_once __DIR__ . '/../common/_head.php' ?>
 
-<body> <?php include_once __DIR__ . '/../common/_header.php' ?> <div class="wrapper"> <?php include_once __DIR__ . '/_post.php' ?> <?php include_once __DIR__ . '/../common/_alert.php' ?>
+<body>
+    <?php include_once __DIR__ . '/../common/_header.php' ?>
+    <div class="wrapper wrapper-comment">
+        <div class="">
+            <?php include_once __DIR__ . '/_post.php' ?>
+            <?php include_once __DIR__ . '/../common/_alert.php' ?>
 
-        <form action="create.php" method="post">
-            <?php include_once __DIR__ . '/_form.php' ?>
-            <div class="form-group">
-                <input type="submit" class="btn comment-btn" value="登録">
-            </div>
-        </form>
+            <form action="create.php" method="post">
+                <?php include_once __DIR__ . '/_form.php' ?>
+                <div class="form-group">
+                    <input type="submit" class="btn comment-btn" value="登録">
+                </div>
+            </form>
+        </div>
     </div>
 
     <?php include_once __DIR__ . '/../common/_footer.php' ?>
